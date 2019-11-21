@@ -1,0 +1,20 @@
+// Editor styles
+
+// Framework and library configuration
+@import 'bootstrap';
+@import 'atlas';
+
+// Framework and library source
+@import 'node_modules/bootstrap/scss/bootstrap';
+@import 'node_modules/castlegate-atlas/src/scss/atlas';
+
+// Theme utilities
+// @import 'functions';
+// @import 'variables';
+// @import 'mixins';
+// @import 'placeholders';
+
+// Editor styles
+body {
+    margin: 1em;
+}

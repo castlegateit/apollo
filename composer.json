@@ -1,0 +1,20 @@
+{
+    "name": "castlegate/apollo",
+    "description": "Standard WordPress theme",
+    "license": "GPL-3.0-or-later",
+    "authors": [
+        {
+            "name": "John Hughes",
+            "email": "john@castlegateit.co.uk"
+        }
+    ],
+    "require": {
+        "castlegate/monolith-core": "^1.1.0",
+        "castlegate/monolith-wordpress": "^1.0.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Castlegate\\Apollo\\": "classes"
+        }
+    }
+}
