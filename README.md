@@ -11,9 +11,13 @@ Apollo is a basic [WordPress](https://wordpress.org/) theme template. It uses [n
 
 ## Extend
 
+The site uses [Boostrap](https://getbootstrap.com/) and [Atlas](https://github.com/castlegateit/atlas) to provide basic styles. The class name prefix used by Atlas components is set in the `config.json` file, which is read by Gulp and PHP to ensure that the prefix is set consistently in the HTML, CSS, and JavaScript output.
+
+The prefix is available as `$atlas-prefix` in Sass, `ATLAS_PREFIX` in JavaScript, and `ATLAS_PREFIX` in PHP.
+
 ### CSS
 
-The site uses [Boostrap](https://getbootstrap.com/) and [Atlas](https://github.com/castlegateit/atlas) to provide basic styles. Edit the following files to configure the theme:
+Edit the following files to configure the theme:
 
 *   Edit `src/scss/_bootstrap.scss` to override the default Bootstrap variables defined in `node_modules/bootstrap/scss/_variables.scss`.
 *   Edit `src/scss/_atlas.scss` to override the default Atlas variables defined in `node_modules/castlegate-atlas/src/scss/_variables.scss`.
@@ -24,7 +28,7 @@ As far as possible, the CSS should be written using the [BEM](http://getbem.com/
 
 ### JavaScript
 
-The site includes [jQuery](https://jquery.com/), Bootstrap, Atlas. The file `src/js/atlas.js` can be used to edit the Atlas class name prefix. Any additional files in this directory will be compiled into the production JavaScript files when you run `npm run build`.
+The site includes [jQuery](https://jquery.com/), Bootstrap, Atlas. Any additional files in the `src/js` directory will be compiled into the production JavaScript files when you run `npm run build`.
 
 Third-party scripts should be installed with npm. For example:
 
@@ -42,13 +46,13 @@ const config = {
             js: [
                 './node_modules/jquery/dist/jquery.js',
                 './node_modules/bootstrap/dist/js/bootstrap.js',
-                './node_modules/castlegate-atlas/dist/js/atlas.js',
+                './node_modules/castlegate-atlas/src/js/**/*.js',
+                '!./node_modules/castlegate-atlas/src/js/atlas.js',
 
                 './node_modules/castlegate-truncate/dist/truncate.js',
                 './node_modules/magnific-popup/dist/jquery.magnific-popup.js',
                 './node_modules/tiny-slider/dist/tiny-slider.js',
 
-                './src/js/atlas.js',
                 './src/js/**/*.js'
             ]
         }

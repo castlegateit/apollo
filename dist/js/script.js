@@ -1,3 +1,4 @@
+ATLAS_PREFIX = "apollo-";
 /*!
  * jQuery JavaScript Library v3.4.1
  * https://jquery.com/
@@ -15033,10 +15034,9 @@ return jQuery;
 }));
 //# sourceMappingURL=bootstrap.js.map
 
-// Atlas configuration and constants
-
 // Atlas block class prefix, which is also set in the Sass source
-// _variables.scss file.
+// _variables.scss file. This file is not bundled in the production JavaScript
+// by default to allow the prefix to be set separately during build.
 if (typeof ATLAS_PREFIX === 'undefined') {
     ATLAS_PREFIX = 'atlas-';
 }
@@ -15405,11 +15405,5 @@ $(function () {
         hideNav();
     });
 });
-
-//# sourceMappingURL=atlas.js.map
-
-// Atlas configuration
-
-ATLAS_PREFIX = 'apollo-';
 
 //# sourceMappingURL=script.js.map

@@ -4,38 +4,7 @@
 'use strict';
 
 // Configuration
-const config = {
-    paths: {
-        src: {
-            css: './src/scss/**/*.scss',
-            js: [
-                './node_modules/jquery/dist/jquery.js',
-                './node_modules/bootstrap/dist/js/bootstrap.js',
-                './node_modules/castlegate-atlas/dist/js/atlas.js',
-                './src/js/atlas.js',
-                './src/js/**/*.js'
-            ]
-        },
-        dest: {
-            css: './dist/css',
-            js: './dist/js'
-        }
-    },
-    plugins: {
-        autoprefixer: {
-            remove: false
-        },
-        rename: {
-            suffix: '.min'
-        },
-        sass: {
-            includePaths: [
-                '.'
-            ],
-            outputStyle: 'nested'
-        }
-    }
-};
+const config = require('./config.json');
 
 // Modules
 const del = require('del');
@@ -46,11 +15,18 @@ const autoprefixer = require('gulp-autoprefixer');
 const concat = require('gulp-concat');
 const csso = require('gulp-csso');
 const filter = require('gulp-filter');
+const inject = require('gulp-inject-string');
 const plumber = require('gulp-plumber');
 const rename = require('gulp-rename');
 const sass = require('gulp-sass');
 const sourcemaps = require('gulp-sourcemaps');
 const uglify = require('gulp-uglify');
+
+// Prefix
+const prefix = {
+    sass: '$atlas-prefix: "' + config.prefix + '";\n',
+    js: 'ATLAS_PREFIX = "' + config.prefix + '";\n'
+};
 
 // Tasks
 function cssCleanTask()
@@ -68,6 +44,7 @@ function cssCompileTask() {
 
         // Create map(s) and write uncompressed development version
         .pipe(sourcemaps.init())
+        .pipe(inject.prepend(prefix.sass))
         .pipe(sass(config.plugins.sass).on('error', sass.logError))
         .pipe(autoprefixer(config.plugins.autoprefixer))
         .pipe(sourcemaps.write('.'))
@@ -87,6 +64,7 @@ function jsCompileTask() {
         // Create map(s) and write uncompressed development version
         .pipe(sourcemaps.init())
         .pipe(concat('script.js'))
+        .pipe(inject.prepend(prefix.js))
         .pipe(sourcemaps.write('.'))
         .pipe(gulp.dest(config.paths.dest.js))
 

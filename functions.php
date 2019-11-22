@@ -22,6 +22,8 @@ require_once __DIR__ . '/vendor/autoload.php';
  * Include files containing the definitions of constants used throughout the
  * theme and functions in the theme namespace.
  */
+$atlas = json_decode(file_get_contents(__DIR__ . '/config.json'));
+
 require_once __DIR__ . '/helpers/constants.php';
 require_once __DIR__ . '/helpers/functions.php';
 
