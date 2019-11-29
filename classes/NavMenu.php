@@ -113,7 +113,7 @@ class NavMenu
     public function sanitizeArgs($args)
     {
         if (!$this->hasLocation($args)) {
-            return;
+            return $args;
         }
 
         $args['container'] = false;
@@ -139,7 +139,7 @@ class NavMenu
     public function sanitizeSubMenuClass($classes, $args, $depth)
     {
         if (!$this->hasLocation($args)) {
-            return;
+            return $classes;
         }
 
         return [
@@ -160,7 +160,7 @@ class NavMenu
     public function sanitizeItemClass($classes, $item, $args, $depth)
     {
         if (!$this->hasLocation($args)) {
-            return;
+            return $classes;
         }
 
         return [
@@ -181,7 +181,7 @@ class NavMenu
     public function sanitizeLinkAttributes($attributes, $item, $args, $depth)
     {
         if (!$this->hasLocation($args)) {
-            return;
+            return $attributes;
         }
 
         $classes = [
