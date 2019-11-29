@@ -7,5 +7,10 @@
         <?php wp_head() ?>
     </head>
 
-    <body>
-        <?php get_template_part('components/header/header') ?>
+    <body <?php body_class() ?>>
+        <?php
+
+        wp_body_open();
+        get_template_part('components/header/header');
+
+        ?>
