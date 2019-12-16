@@ -12,5 +12,3 @@
 
         wp_body_open();
         get_template_part('components/header/header');
-
-        ?>

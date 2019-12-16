@@ -28,6 +28,14 @@ require_once __DIR__ . '/helpers/constants.php';
 require_once __DIR__ . '/helpers/functions.php';
 
 /**
+ * Load core files
+ *
+ * Include the core parts of the theme, which should not be modified with the
+ * rest of the theme.
+ */
+require_once __DIR__ . '/core/nav-menus.php';
+
+/**
  * Enqueue CSS and JavaScript
  *
  * Safely load CSS and JavaScript files for the theme and the classic content
@@ -43,8 +51,6 @@ require_once __DIR__ . '/helpers/classic-editor-css.php';
  * Configure theme features, including automatic title elements, featured
  * images, navigation menus, and image sizes.
  */
-require_once __DIR__ . '/helpers/atlas-nav-menus.php';
 require_once __DIR__ . '/helpers/icons.php';
 require_once __DIR__ . '/helpers/image-sizes.php';
-require_once __DIR__ . '/helpers/nav-menus.php';
 require_once __DIR__ . '/helpers/theme-support.php';

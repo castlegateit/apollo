@@ -1,6 +1,6 @@
 <?php
 
-namespace Castlegate\Apollo;
+namespace Castlegate\Apollo\Core;
 
 /**
  * Navigation menu compatibility
@@ -15,9 +15,7 @@ class NavMenu
      *
      * @var array
      */
-    private $locations = [
-        'main-nav'
-    ];
+    private $locations = [];
 
     /**
      * List component class
@@ -63,15 +61,17 @@ class NavMenu
      * @param mixed $locations Menu theme location(s)
      * @return void
      */
-    public function __construct($locations = null)
+    public function __construct($locations)
     {
-        if (!is_null($locations)) {
-            if (!is_array($locations)) {
-                $locations = [$locations];
-            }
-
-            $this->locations = $locations;
+        if (!$locations) {
+            return;
         }
+
+        if (!is_array($locations)) {
+            $locations = [$locations];
+        }
+
+        $this->locations = $locations;
 
         $this->createClasses();
         $this->createFilters();

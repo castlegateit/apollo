@@ -9,6 +9,10 @@ Apollo is a basic [WordPress](https://wordpress.org/) theme template. It uses [n
     composer install
     npm install
 
+## Core
+
+The contents of the `core` directory are essential parts of Apollo and should not be modified with the rest of the theme. These should always be included in the `functions.php` file.
+
 ## Extend
 
 The site uses [Boostrap](https://getbootstrap.com/) and [Atlas](https://github.com/castlegateit/atlas) to provide basic styles. The class name prefix used by Atlas components is set in the `config.json` file, which is read by Gulp and PHP to ensure that the prefix is set consistently in the HTML, CSS, and JavaScript output.
@@ -83,11 +87,11 @@ Constants used throughout the site should be defined in the `wp-config.php` file
 
 #### Functions
 
-Functions defined for use in the theme should be defined in `helpers/functions.php` with the `Castlegate\Apollo` namespace.
+Functions defined for use in the theme should be defined in `helpers/functions.php` with the `Castlegate\Apollo\Theme` namespace.
 
 #### Classes
 
-Classes should be defined in separate files in the `classes` directory and should follow the [PHP-FIG](https://www.php-fig.org/) standards. The classes defined in this directory are autoloaded by Composer in the `Castlegate\Apollo` namespace.
+Classes should be defined in separate files in the `classes` directory and should follow the [PHP-FIG](https://www.php-fig.org/) standards. The classes defined in this directory are autoloaded by Composer in the `Castlegate\Apollo\Theme` namespace.
 
 #### Theme features and definitions
 
