@@ -8,4 +8,4 @@
  * the theme functions.php file.
  */
 
-namespace Castlegate\Apollo;
+namespace Castlegate\Apollo\Theme;
