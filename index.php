@@ -25,6 +25,8 @@ get_header();
         }
     }
 
+    get_template_part('components/pagination/pagination');
+
     ?>
 </div>
 

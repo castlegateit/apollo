@@ -28,6 +28,8 @@ get_header();
         echo '<p>No posts found.</p>';
     }
 
+    get_template_part('components/pagination/pagination');
+
     ?>
 </div>
 
