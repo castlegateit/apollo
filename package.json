@@ -1,6 +1,6 @@
 {
   "name": "@castlegate/apollo",
-  "version": "0.3.1",
+  "version": "0.4.1",
   "description": "Standard WordPress theme",
   "main": "index.js",
   "scripts": {
