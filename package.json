@@ -1,6 +1,6 @@
 {
-  "name": "castlegate-apollo",
-  "version": "0.3.0",
+  "name": "@castlegate/apollo",
+  "version": "0.3.1",
   "description": "Standard WordPress theme",
   "main": "index.js",
   "scripts": {
@@ -17,7 +17,7 @@
   },
   "license": "GPL-3.0-or-later",
   "dependencies": {
-    "castlegate-atlas": "^0.2.0"
+    "@castlegate/atlas": "^0.2.1"
   },
   "devDependencies": {
     "del": "^5.1.0",

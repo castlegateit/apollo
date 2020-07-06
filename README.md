@@ -24,7 +24,7 @@ The prefix is available as `$atlas-prefix` in Sass, `ATLAS_PREFIX` in JavaScript
 Edit the following files to configure the theme:
 
 *   Edit `src/scss/_bootstrap.scss` to override the default Bootstrap variables defined in `node_modules/bootstrap/scss/_variables.scss`.
-*   Edit `src/scss/_atlas.scss` to override the default Atlas variables defined in `node_modules/castlegate-atlas/src/scss/_variables.scss`.
+*   Edit `src/scss/_atlas.scss` to override the default Atlas variables defined in `node_modules/@castlegate/atlas/src/scss/_variables.scss`.
 
 You can also edit `src/scss/style.scss` to provide your own styles. You will need to run `npm run build` or `npm run watch` to compile the production CSS files.
 
@@ -36,7 +36,7 @@ The site includes [jQuery](https://jquery.com/), Bootstrap, Atlas. Any additiona
 
 Third-party scripts should be installed with npm. For example:
 
-    npm install --save-dev castlegate-truncate
+    npm install --save-dev @castlegate/jquery-truncate
     npm install --save-dev magnific-popup
     npm install --save-dev tiny-slider
 
@@ -50,10 +50,10 @@ const config = {
             js: [
                 './node_modules/jquery/dist/jquery.js',
                 './node_modules/bootstrap/dist/js/bootstrap.js',
-                './node_modules/castlegate-atlas/src/js/**/*.js',
-                '!./node_modules/castlegate-atlas/src/js/atlas.js',
+                './node_modules/@castlegate/atlas/src/js/**/*.js',
+                '!./node_modules/@castlegate/atlas/src/js/atlas.js',
 
-                './node_modules/castlegate-truncate/dist/truncate.js',
+                './node_modules/@castlegate/jquery-truncate/dist/truncate.js',
                 './node_modules/magnific-popup/dist/jquery.magnific-popup.js',
                 './node_modules/tiny-slider/dist/tiny-slider.js',
 
@@ -71,7 +71,7 @@ Example Sass import:
 ~~~ scss
 // Framework and library source
 @import 'node_modules/bootstrap/scss/bootstrap';
-@import 'node_modules/castlegate-atlas/src/scss/atlas';
+@import 'node_modules/@castlegate/atlas/src/scss/atlas';
 @import 'node_modules/magnific-popup/src/main';
 @import 'node_modules/tiny-slider/src/tiny-slider';
 // ...
